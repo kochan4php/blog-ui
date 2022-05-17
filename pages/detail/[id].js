@@ -9,11 +9,7 @@ const Detail = () => {
 
   console.log(id);
 
-  return (
-    <Layout>
-      <DetailBlog id={id} />
-    </Layout>
-  );
+  return <DetailBlog id={id} />;
 };
 
 export default Detail;

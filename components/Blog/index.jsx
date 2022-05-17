@@ -13,7 +13,7 @@ const Blog = () => {
             {blog[0].category} &#8226; {blog[0].date}
           </p>
           <Link href={"/detail/" + blog[0].id} passHref>
-            <h1 className="text-2xl lg:text-3xl mb-5 tracking-wide leading-10 lg:leading-snug text-slate-200 cursor-pointer hover:text-slate-300 transition-colors duration-200">
+            <h1 className="text-xl lg:text-3xl mb-5 tracking-wide leading-10 lg:leading-snug text-slate-200 cursor-pointer hover:text-slate-300 transition-colors duration-200">
               {blog[0].title}
             </h1>
           </Link>
@@ -46,7 +46,7 @@ const Blog = () => {
                 {item.category} &#8226; {item.date}
               </p>
               <Link href={"/detail/" + item.id} passHref>
-                <h1 className="text-2xl mb-5 tracking-wide leading-10 text-slate-200 cursor-pointer hover:text-slate-300 transition-colors duration-200">
+                <h1 className="text-xl mb-5 tracking-wide leading-10 text-slate-200 cursor-pointer hover:text-slate-300 transition-colors duration-200">
                   {item.title}
                 </h1>
               </Link>

@@ -2,7 +2,7 @@ const blog = [
   {
     id: 1,
     img: "/img/1.jpg",
-    category: "ui design",
+    category: "uiuxdesign",
     date: "July 2, 2021",
     title:
       "Understanding color theory: the color wheel and finding complementary colors",
