@@ -23,7 +23,7 @@ const Navbar = () => (
         </button>
         <div className="flex">
           <nav
-            className="hidden absolute lg:static lg:flex bg-slate-800 lg:bg-transparent lg:border-0 items-center lg:w-[660px] xl:w-[750px] text-lg top-14 border border-slate-500 w-[270px] shadow-md lg:shadow-none md:w-[350px] shadow-slate-500 left-0 rounded-md text-center"
+            className="hidden absolute lg:static lg:flex bg-slate-800 lg:bg-transparent lg:border-0 items-center lg:w-[660px] xl:w-[750px] text-lg top-14 border border-slate-500 w-[270px] shadow-md lg:shadow-none md:w-[350px] shadow-slate-500 left-0 rounded-md text-center z-[999]"
             id="nav-menu"
           >
             <ul className="flex flex-col lg:flex-row justify-between items-center w-full">
@@ -40,13 +40,13 @@ const Navbar = () => (
                 </button>
               </li>
               <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                <Link href={"/"}>UI Design</Link>
+                <Link href={"/ui-design"}>UI Design</Link>
               </li>
               <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                <Link href={"/"}>Front End</Link>
+                <Link href={"/frontend"}>Front End</Link>
               </li>
               <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                <Link href={"/"}>Back End</Link>
+                <Link href={"/backend"}>Back End</Link>
               </li>
               <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
                 <button className="flex items-center justify-center gap-2">

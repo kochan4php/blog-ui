@@ -1,7 +1,7 @@
 const blog = [
   {
     id: 1,
-    img: "https://source.unsplash.com/1200x700?design",
+    img: "/img/1.jpg",
     category: "ui design",
     date: "July 2, 2021",
     title:
@@ -28,7 +28,7 @@ const blog = [
   },
   {
     id: 2,
-    img: "https://source.unsplash.com/1200x700?internet",
+    img: "/img/2.jpg",
     category: "internet",
     date: "June 28, 2021",
     title: "How to design a product that can grow itself 10x in year",
@@ -54,7 +54,7 @@ const blog = [
   },
   {
     id: 3,
-    img: "https://source.unsplash.com/1200x700?backend",
+    img: "/img/1.jpg",
     category: "backend",
     date: "June 28, 2021",
     title: "The More Important the Work, the More Important the Rest",
@@ -80,7 +80,7 @@ const blog = [
   },
   {
     id: 4,
-    img: "https://source.unsplash.com/1200x700?frontend",
+    img: "/img/2.jpg",
     category: "frontend",
     date: "June 28, 2021",
     title: "Email Love - Email Inspiration, Templates and Discovery",
@@ -106,7 +106,7 @@ const blog = [
   },
   {
     id: 5,
-    img: "https://source.unsplash.com/1200x700?backend",
+    img: "/img/1.jpg",
     category: "backend",
     date: "June 28, 2021",
     title: "The More Important the Work, the More Important the Rest",
@@ -132,7 +132,7 @@ const blog = [
   },
   {
     id: 6,
-    img: "https://source.unsplash.com/1200x700?design",
+    img: "/img/2.jpg",
     category: "design",
     date: "June 28, 2021",
     title: "Email Love - Email Inspiration, Templates and Discovery",
@@ -158,7 +158,7 @@ const blog = [
   },
   {
     id: 7,
-    img: "https://source.unsplash.com/1200x700?frontend",
+    img: "/img/1.jpg",
     category: "frontend",
     date: "June 28, 2021",
     title: "How to design a product that can grow itself 10x in year",

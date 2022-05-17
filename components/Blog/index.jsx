@@ -4,8 +4,8 @@ import blog from "../../data";
 const Blog = () => {
   return (
     <section className="mb-6">
-      <div className="text-slate-300 mb-20 xl:flex">
-        <div className="h-full w-full rounded-md overflow-hidden">
+      <div className="text-slate-300 mb-20 py-0 xl:flex items-center">
+        <div className="w-full h-full rounded-md overflow-hidden">
           <img src={blog[0].img} className="w-full h-full" />
         </div>
         <div className="w-full xl:px-8 xl:py-4 xl:w-2/3 lg:-my-5">
