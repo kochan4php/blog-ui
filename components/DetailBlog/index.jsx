@@ -15,7 +15,7 @@ const DetailBlog = ({ id }) => {
       {detailBlog.map((blog) => (
         <div key={blog.id} className="text-slate-300 mb-3">
           <div className="flex flex-col justify-center items-center px-6">
-            <p className="capitalize text-slate-400 mb-5 lg:text-lg">
+            <p className="capitalize text-slate-400 my-5 lg:text-lg">
               {blog.category} &#8226; {blog.date}
             </p>
             <h1 className="text-xl lg:text-2xl mb-5 tracking-wide lg:leading-9 leading-8 text-slate-200 text-center">
@@ -35,12 +35,12 @@ const DetailBlog = ({ id }) => {
               </div>
             </div>
           </div>
-          <div className="h-full w-full rounded-md overflow-hidden my-6 px-5">
+          <div className="h-full w-full rounded-md overflow-hidden my-6 lg:px-5">
             <img src={blog.img} className="w-full h-full" />
           </div>
           <div
             dangerouslySetInnerHTML={{ __html: blog.detail }}
-            className="text-md lg:text-xl m-16 lg:px-0 lg:leading-9 leading-8 tracking-wider text-slate-300 px-5"
+            className="text-md lg:text-xl lg:m-16 lg:px-0 lg:leading-9 leading-8 tracking-wider text-slate-300 px-5"
           ></div>
         </div>
       ))}

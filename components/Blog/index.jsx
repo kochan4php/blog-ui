@@ -8,7 +8,7 @@ const Blog = () => {
         <div className="h-full w-full rounded-md overflow-hidden">
           <img src={blog[0].img} className="w-full h-full" />
         </div>
-        <div className="w-full xl:px-8 xl:py-4 xl:w-2/3 -my-5">
+        <div className="w-full xl:px-8 xl:py-4 xl:w-2/3 lg:-my-5">
           <p className="capitalize text-slate-400 my-5">
             {blog[0].category} &#8226; {blog[0].date}
           </p>
