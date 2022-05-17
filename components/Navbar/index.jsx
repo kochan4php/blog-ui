@@ -62,7 +62,7 @@ const Navbar = () => {
               </div>
             </>
           )}
-          <div>
+          <div className="lg:hidden">
             <button
               className="flex items-center justify-center gap-1 hover:text-slate-400"
               onClick={handleClick}
