@@ -1,116 +1,99 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
-  const router = useRouter();
-  const navMenu = useRef(null);
-  const hamburger = useRef(null);
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(!open);
-  };
-
-  const handleClick = () => {
-    router.push("/");
-  };
+  const handleClick = () => setOpen(!open);
+  const handleClose = () => setOpen(false);
 
   return (
-    <header className="bg-transparent w-full py-6 mb-2 md:mb-6">
-      <div className="container">
-        <div className="flex justify-between items-center w-full relative">
-          <button
-            className="lg:hidden text-slate-300 text-lg cursor-pointer hover:text-slate-400 transiton duration-300"
-            ref={hamburger}
-            onClick={handleOpen}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10 fill-current"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-          {open && (
-            <>
-              <div className="flex">
-                <nav className="absolute lg:static lg:flex bg-slate-800 lg:bg-transparent lg:border-0 items-center lg:w-[660px] xl:w-[750px] text-lg top-14 border border-slate-500 w-[200px] shadow-md lg:shadow-none md:w-[350px] shadow-slate-500 left-0 rounded-md text-center z-[999]">
-                  <ul className="flex flex-col lg:flex-row justify-between items-center w-full">
-                    <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                      <Link href={"/posts/uiuxdesign"}>UI Design</Link>
-                    </li>
-                    <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                      <Link href={"/posts/frontend"}>Front End</Link>
-                    </li>
-                    <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                      <Link href={"/posts/backend"}>Back End</Link>
-                    </li>
-                    <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                      <button className="flex items-center justify-center gap-2">
-                        <p>Lainnya</p>
-                      </button>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </>
-          )}
+    <header className="bg-slate-700 bg-opacity-40 backdrop-blur-lg fixed top-0 right-0 left-0 py-2.5 md:py-3 mb-6 lg:py-4">
+      <div className="container relative">
+        <div className="flex justify-between items-center">
+          {/* For Mobile & Tablet */}
           <div className="lg:hidden">
             <button
-              className="flex items-center justify-center gap-1 hover:text-slate-400"
+              className="lg:hidden text-slate-300 text-lg cursor-pointer hover:text-slate-400 transiton duration-300"
               onClick={handleClick}
             >
-              <div className="flex justify-between items-center">
-                <div className="w-[35px] h-[35px] flex justify-center items-center rounded bg-slate-500 text-slate-100 mr-3 text-xl p-1">
-                  K
-                </div>
-                <p className="text-slate-300 text-xl truncate">kumikochan</p>
-              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10 fill-current"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </button>
           </div>
-          <div className="flex">
-            <nav className="hidden lg:static lg:flex bg-slate-800 lg:bg-transparent lg:border-0 items-center lg:w-[660px] xl:w-[750px] text-lg top-14 border border-slate-500 w-[270px] shadow-md lg:shadow-none md:w-[350px] shadow-slate-500 left-0 rounded-md text-center z-[999]">
-              <ul className="flex flex-col lg:flex-row justify-between items-center w-full">
-                <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 group transition-colors duration-200">
-                  <button
-                    className="flex items-center justify-center gap-1 hover:text-slate-400"
-                    onClick={handleClick}
-                  >
-                    <div className="flex justify-between items-center">
-                      <div className="w-[35px] h-[35px] flex justify-center items-center rounded bg-slate-500 text-slate-100 mr-3 text-xl p-1">
-                        K
-                      </div>
-                      <p className="text-slate-300 text-xl truncate">
-                        kumikochan
-                      </p>
-                    </div>
+          <div className="lg:hidden">
+            <div className="flex justify-between items-center">
+              <div className="w-[35px] h-[35px] flex justify-center items-center rounded bg-slate-500 text-slate-100 mr-3 text-xl p-1">
+                K
+              </div>
+              <p className="text-slate-300 text-xl truncate">kumikochan</p>
+            </div>
+          </div>
+          {open && (
+            <nav className="bg-slate-800 fixed top-0 right-0 left-0 z-[999] w-full h-screen lg:hidden">
+              <button
+                className="bg-red-600 text-white absolute p-1.5 md:2.5 left-6 top-6 rounded-md"
+                onClick={handleClose}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+              <ul className="flex flex-col lg:flex-row justify-evenly text-2xl md:text-4xl lg:text-2xl items-center w-full h-full">
+                <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500">
+                  <button onClick={handleClose}>
+                    <Link href={"/"}>UI Design</Link>
                   </button>
                 </li>
-                <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                  <Link href={"/posts/uiuxdesign"}>UI Design</Link>
+                <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500">
+                  <button onClick={handleClose}>
+                    <Link href={"/"}>Software</Link>
+                  </button>
                 </li>
-                <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                  <Link href={"/posts/frontend"}>Front End</Link>
+                <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
+                  <button onClick={handleClose}>
+                    <Link href={"/"}>Front End</Link>
+                  </button>
                 </li>
-                <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                  <Link href={"/posts/backend"}>Back End</Link>
+                <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
+                  <button onClick={handleClose}>
+                    <Link href={"/"}>Back End</Link>
+                  </button>
                 </li>
-                <li className="px-6 py-4 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-slate-400 transition-colors duration-200 cursor-pointer">
-                  <button className="flex items-center justify-center gap-2">
+                <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
+                  <button
+                    className="flex items-center justify-center gap-2"
+                    onClick={handleClose}
+                  >
                     <p>Lainnya</p>
                   </button>
                 </li>
               </ul>
             </nav>
-          </div>
-          <div className="md:hidden text-slate-300 cursor-pointer hover:text-slate-400 transiton duration-300 text-sm flex gap-3 items-center">
+          )}
+          <div className="lg:hidden text-slate-300 cursor-pointer hover:text-slate-400 transiton duration-300 text-sm flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8 fill-current"
@@ -124,17 +107,66 @@ const Navbar = () => {
               />
             </svg>
           </div>
-          <div className="hidden md:flex md:gap-2">
-            <form action="">
+          {/* For Mobile & Tablet */}
+
+          {/* For Desktop */}
+          <nav className="hidden lg:flex lg:items-center w-[900px]">
+            <ul className="flex justify-between text-lg items-center w-full h-full">
+              <li className="p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500 mr-10">
+                <div className="hidden lg:block">
+                  <div className="flex justify-between items-center">
+                    <div className="w-[35px] h-[35px] flex justify-center items-center rounded bg-slate-500 text-slate-100 mr-3 text-xl p-1">
+                      K
+                    </div>
+                    <p className="text-slate-300 text-xl truncate">
+                      kumikochan
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li className="p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500">
+                <button onClick={handleClose}>
+                  <Link href={"/"}>UI Design</Link>
+                </button>
+              </li>
+              <li className="p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500">
+                <button onClick={handleClose}>
+                  <Link href={"/"}>Software</Link>
+                </button>
+              </li>
+              <li className="p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
+                <button onClick={handleClose}>
+                  <Link href={"/"}>Front End</Link>
+                </button>
+              </li>
+              <li className="p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
+                <button onClick={handleClose}>
+                  <Link href={"/"}>Back End</Link>
+                </button>
+              </li>
+              <li className="p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
+                <button
+                  className="flex items-center justify-center gap-2"
+                  onClick={handleClose}
+                >
+                  <p>Lainnya</p>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <div className="hidden text-slate-300 cursor-pointer hover:text-slate-400 transiton duration-300 text-sm lg:flex gap-3 items-center">
+            <form>
               <input
-                type="text"
+                type="search"
                 name="search"
-                placeholder="Search"
+                id="search"
                 autoComplete="off"
-                className="px-4 py-1.5 rounded-full bg-slate-600 text-white focus:ring focus:outline-none"
+                placeholder="Search"
+                className="px-4 py-2 rounded-full focus:outline-none focus:ring focus:ring-sky-500 bg-slate-800 text-slate-50"
               />
             </form>
           </div>
+          {/* For Desktop */}
         </div>
       </div>
     </header>
