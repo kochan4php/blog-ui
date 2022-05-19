@@ -2,7 +2,8 @@ const blog = [
   {
     id: 1,
     img: "/img/1.jpg",
-    category: "uiuxdesign",
+    category: "UI-UX Design",
+    slug: "uiuxdesign",
     date: "July 2, 2021",
     title:
       "Understanding color theory: the color wheel and finding complementary colors",
@@ -29,7 +30,8 @@ const blog = [
   {
     id: 2,
     img: "/img/2.jpg",
-    category: "internet",
+    category: "Internet",
+    slug: "internet",
     date: "June 28, 2021",
     title: "How to design a product that can grow itself 10x in year",
     excerpt:
@@ -55,7 +57,8 @@ const blog = [
   {
     id: 3,
     img: "/img/1.jpg",
-    category: "backend",
+    category: "Backend",
+    slug: "backend",
     date: "June 28, 2021",
     title: "The More Important the Work, the More Important the Rest",
     excerpt:
@@ -81,7 +84,8 @@ const blog = [
   {
     id: 4,
     img: "/img/2.jpg",
-    category: "frontend",
+    category: "Frontend",
+    slug: "frontend",
     date: "June 28, 2021",
     title: "Email Love - Email Inspiration, Templates and Discovery",
     excerpt:
@@ -107,7 +111,8 @@ const blog = [
   {
     id: 5,
     img: "/img/1.jpg",
-    category: "backend",
+    category: "Backend",
+    slug: "backend",
     date: "June 28, 2021",
     title: "The More Important the Work, the More Important the Rest",
     excerpt:
@@ -133,7 +138,8 @@ const blog = [
   {
     id: 6,
     img: "/img/2.jpg",
-    category: "design",
+    category: "UI-UX Design",
+    slug: "uiuxdesign",
     date: "June 28, 2021",
     title: "Email Love - Email Inspiration, Templates and Discovery",
     excerpt:
@@ -159,7 +165,8 @@ const blog = [
   {
     id: 7,
     img: "/img/1.jpg",
-    category: "frontend",
+    category: "Frontend",
+    slug: "frontend",
     date: "June 28, 2021",
     title: "How to design a product that can grow itself 10x in year",
     excerpt:
@@ -177,6 +184,33 @@ const blog = [
       </p>`,
     user: {
       id: 7,
+      avatar: "/img/mugi.jpg",
+      name: "Kotobuki Tsumugi",
+      role: "UI Designer",
+    },
+  },
+  {
+    id: 8,
+    img: "/img/2.jpg",
+    category: "Software",
+    slug: "software",
+    date: "June 28, 2021",
+    title: "How to be an expert in software development",
+    excerpt:
+      "Auctor Porta. Augue vitae diam mauris faucibus blandit elit per, feugiat leo dui orci. Etiam vestibulum. Nostra netus per conubia dolor.",
+    detail: `
+      <p>Male sixth sea it a. Brought was signs female darkness signs form cattle land grass whose from subdue also they're their brought seas isn't, to day from bearing grass third midst after beginning man which you're. Dry, gathering beginning given made them evening.
+      </p>
+      <br />
+      <p>
+      Lights dry. Thing, likeness, forth shall replenish upon abundantly our green. Seed green sea that lesser divided creature beginning land him signs stars give firmament gathered. Wherein there their morning a he grass. Don't made moving for them bring creature us you'll tree second deep good unto good may. Us yielding.
+      </p>
+      <br />
+      <p>
+      Have. Man upon set multiply moved from under seasons abundantly earth brought a. They're open moved years saw isn't morning darkness. Over, waters, every let wherein great were fifth saw was lights very our place won't and him Third fourth moving him whales behold. Beast second stars lights great was don't green give subdue his. Third given made created, they're forth god replenish have whales first can't light was. Herb you'll them beast kind divided. Were beginning fly air multiply god Yielding sea don't were forth.    
+      </p>`,
+    user: {
+      id: 8,
       avatar: "/img/mugi.jpg",
       name: "Kotobuki Tsumugi",
       role: "UI Designer",

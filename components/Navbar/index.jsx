@@ -2,11 +2,20 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+const route = [
+  { destination: "/posts/uiuxdesign", routeName: "UI-UX Design" },
+  { destination: "/posts/software", routeName: "Software" },
+  { destination: "/posts/frontend", routeName: "Frontend" },
+  { destination: "/posts/backend", routeName: "Backend" },
+];
+
 const Navbar = () => {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   const handleClick = () => setOpen(!open);
   const handleClose = () => setOpen(false);
+  const handleBackToRoot = () => router.push("/");
 
   return (
     <header className="bg-slate-700 bg-opacity-40 backdrop-blur-lg fixed top-0 right-0 left-0 py-2.5 md:py-3 mb-6 lg:py-4">
@@ -32,14 +41,14 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-          <div className="lg:hidden">
+          <button className="lg:hidden" onClick={handleBackToRoot}>
             <div className="flex justify-between items-center">
               <div className="w-[35px] h-[35px] flex justify-center items-center rounded bg-slate-500 text-slate-100 mr-3 text-xl p-1">
                 K
               </div>
               <p className="text-slate-300 text-xl truncate">kumikochan</p>
             </div>
-          </div>
+          </button>
           {open && (
             <nav className="bg-slate-800 fixed top-0 right-0 left-0 z-[999] w-full h-screen lg:hidden">
               <button
@@ -62,26 +71,18 @@ const Navbar = () => {
                 </svg>
               </button>
               <ul className="flex flex-col lg:flex-row justify-evenly text-2xl md:text-4xl lg:text-2xl items-center w-full h-full">
-                <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500">
-                  <button onClick={handleClose}>
-                    <Link href={"/"}>UI Design</Link>
-                  </button>
-                </li>
-                <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500">
-                  <button onClick={handleClose}>
-                    <Link href={"/"}>Software</Link>
-                  </button>
-                </li>
-                <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
-                  <button onClick={handleClose}>
-                    <Link href={"/"}>Front End</Link>
-                  </button>
-                </li>
-                <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
-                  <button onClick={handleClose}>
-                    <Link href={"/"}>Back End</Link>
-                  </button>
-                </li>
+                {route.map(({ destination, routeName }, index) => (
+                  <li
+                    className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500"
+                    key={index}
+                  >
+                    <button onClick={handleClose}>
+                      <Link href={destination} passHref>
+                        <a>{routeName}</a>
+                      </Link>
+                    </button>
+                  </li>
+                ))}
                 <li className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
                   <button
                     className="flex items-center justify-center gap-2"
@@ -113,7 +114,7 @@ const Navbar = () => {
           <nav className="hidden lg:flex lg:items-center w-[900px]">
             <ul className="flex justify-between text-lg items-center w-full h-full">
               <li className="p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500 mr-10">
-                <div className="hidden lg:block">
+                <button className="hidden lg:block" onClick={handleBackToRoot}>
                   <div className="flex justify-between items-center">
                     <div className="w-[35px] h-[35px] flex justify-center items-center rounded bg-slate-500 text-slate-100 mr-3 text-xl p-1">
                       K
@@ -122,28 +123,20 @@ const Navbar = () => {
                       kumikochan
                     </p>
                   </div>
-                </div>
-              </li>
-              <li className="p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500">
-                <button onClick={handleClose}>
-                  <Link href={"/"}>UI Design</Link>
                 </button>
               </li>
-              <li className="p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500">
-                <button onClick={handleClose}>
-                  <Link href={"/"}>Software</Link>
-                </button>
-              </li>
-              <li className="p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
-                <button onClick={handleClose}>
-                  <Link href={"/"}>Front End</Link>
-                </button>
-              </li>
-              <li className="p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
-                <button onClick={handleClose}>
-                  <Link href={"/"}>Back End</Link>
-                </button>
-              </li>
+              {route.map(({ destination, routeName }, index) => (
+                <li
+                  className="px-6 md:px-8 md:py-5 lg:p-0 text-slate-300 transition-colors duration-200 cursor-pointer rounded-md hover:text-sky-500"
+                  key={index}
+                >
+                  <button onClick={handleClose}>
+                    <Link href={destination} passHref>
+                      <a>{routeName}</a>
+                    </Link>
+                  </button>
+                </li>
+              ))}
               <li className="p-0 text-slate-300 hover:text-sky-500 transition-colors duration-200 cursor-pointer">
                 <button
                   className="flex items-center justify-center gap-2"

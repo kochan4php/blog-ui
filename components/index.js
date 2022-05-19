@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
-import Blog from "./Blog";
-import DetailBlog from "./DetailBlog";
+import Posts from "./Posts";
+import DetailPost from "./DetailPost";
+import PostsByCategory from "./PostsByCategory";
 import Footer from "./Footer";
 
-export { Navbar, Blog, DetailBlog, Footer };
+export { Navbar, Posts, DetailPost, PostsByCategory, Footer };

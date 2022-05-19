@@ -1,15 +1,11 @@
 import { useRouter } from "next/router";
-import { DetailBlog } from "../../components";
-import Layout from "../../layout";
+import { DetailPost } from "../../components";
 
-// Detail Blog in /detail/:id
 const Detail = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  console.log(id);
-
-  return <DetailBlog id={id} />;
+  return <DetailPost id={id} />;
 };
 
 export default Detail;
