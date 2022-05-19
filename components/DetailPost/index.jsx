@@ -40,7 +40,7 @@ const DetailPosts = ({ id }) => {
           </div>
           <div
             dangerouslySetInnerHTML={{ __html: detail }}
-            className="text-md lg:text-2xl lg:m-16 lg:px-0 lg:leading-9 leading-8 tracking-wider text-slate-300 px-5"
+            className="text-md lg:text-2xl lg:m-16 lg:px-0 lg:leading-9 leading-8  text-slate-300 px-5"
           ></div>
         </div>
       ))}
